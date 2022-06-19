@@ -4,5 +4,8 @@
   "main": "index.mjs",
   "repository": "git@github.com:iannyip/users.git",
   "author": "iannyip",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
