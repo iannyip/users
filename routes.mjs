@@ -9,7 +9,7 @@ const bindRoutes = (app) => {
   const userController = initUserController(db);
 
   // Routes
-  app.get("/", (req, res) => {
+  app.get("/", (request, response) => {
     response.send("you are in root");
   });
 };
