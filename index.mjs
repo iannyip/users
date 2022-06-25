@@ -13,12 +13,15 @@ import bindRoutes from "./routes.mjs";
 
 // 3. Initialize express
 const app = express();
+app.use(express.urlencoded({ extended: false }));
+// app.use(methodOverride());
 
 // 4. Middleware
 const mwLine = (request, response, next) => {
   console.log("-----------------------------------");
   next();
 };
+app.use(mwLine);
 
 // 5. bindRoutes to app
 bindRoutes(app);
