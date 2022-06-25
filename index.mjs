@@ -19,6 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 // 4. Middleware
 const mwLine = (request, response, next) => {
   console.log("-----------------------------------");
+  console.log(`${request.method}: ${request.path}`);
   next();
 };
 app.use(mwLine);
