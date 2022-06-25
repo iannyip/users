@@ -14,6 +14,7 @@ const bindRoutes = (app) => {
   });
 
   app.get("/users", userController.index);
+  app.get("/users/:id", userController.show);
 };
 
 // 4. Export bindRoutes function
