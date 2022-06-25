@@ -12,6 +12,8 @@ const bindRoutes = (app) => {
   app.get("/", (request, response) => {
     response.send("you are in root");
   });
+
+  app.get("/users", userController.index);
 };
 
 // 4. Export bindRoutes function
