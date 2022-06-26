@@ -32,7 +32,6 @@ export default function initUserController(db) {
       for (const val in data) {
         // handle blanks
         if (data[val] == "") {
-          console.log(`${val} is blank`);
           delete data[val];
         }
         // handle date fields
@@ -46,10 +45,7 @@ export default function initUserController(db) {
           data[val] = intVal;
         }
       }
-      // console.log(data.birthday);
-      console.log(data);
       const updateUser = await db.User.update(data, { where: { id } });
-      console.log(updateUser);
       const updatedUser = await db.User.findOne({
         where: { id },
       });
