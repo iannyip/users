@@ -16,6 +16,7 @@ const bindRoutes = (app) => {
   app.get("/users", userController.index);
   app.get("/users/:id", userController.show);
   app.put("/users/:id", userController.update);
+  app.post("/users/new", userController.create);
 };
 
 // 4. Export bindRoutes function
