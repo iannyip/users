@@ -20,7 +20,7 @@ const bindRoutes = (app) => {
   app.put("/users/:id", userController.update);
   app.post("/users/new", userController.create);
 
-  app.get("admin/users", adminUserController.index);
+  app.get("/admin/users", adminUserController.index);
 };
 
 // 4. Export bindRoutes function
