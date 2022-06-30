@@ -4,7 +4,42 @@
     <%- include('./header')-%>
   </head>
   <body>
-    lorem ipsum
+    <div class="container">
+      <h1>All Users</h1>
+      <hr />
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Birthday</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Shirt Size</th>
+            <th scope="col">Net Worth</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Updated At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% allUserData.forEach(user => { %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.firstName%></td>
+            <td><%= user.lastName%></td>
+            <td><%= user.email%></td>
+            <td><%= user.birthday%></td>
+            <td><%= user.gender%></td>
+            <td><%= user.shirtSize%></td>
+            <td><%= user.netWorth%></td>
+            <td><%= user.createdAt%></td>
+            <td><%= user.updatedAt%></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
   </body>
   <%- include("./requiredJS") -%>
 </html>
