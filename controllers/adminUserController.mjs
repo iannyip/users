@@ -4,7 +4,7 @@ export default function initAdminUserController(db) {
   // 1. Route: /admin/users
   const index = async (request, response) => {
     try {
-      response.send("thanks");
+      response.render("allUsers");
     } catch (error) {
       console.log(error);
     }
