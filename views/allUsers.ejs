@@ -29,12 +29,12 @@
             <td><%= user.firstName%></td>
             <td><%= user.lastName%></td>
             <td><%= user.email%></td>
-            <td><%= user.birthday%></td>
+            <td><%= moment(user.birthday).format("DD-MM-YYYY")%></td>
             <td><%= user.gender%></td>
             <td><%= user.shirtSize%></td>
-            <td><%= user.netWorth%></td>
-            <td><%= user.createdAt%></td>
-            <td><%= user.updatedAt%></td>
+            <td><%= user.netWorth.toLocaleString()%></td>
+            <td><%= moment(user.createdAt).format("DD-MM-YYYY")%></td>
+            <td><%= moment(user.updatedAt).format("DD-MM-YYYY")%></td>
           </tr>
           <% }) %>
         </tbody>
