@@ -13,10 +13,11 @@ import bindRoutes from "./routes.mjs";
 
 // 3. Initialize express
 const app = express();
-app.use(express.urlencoded({ extended: false }));
 // app.use(methodOverride());
 
 // 4. Middleware
+// 4.1. To parse request body
+app.use(express.urlencoded({ extended: false }));
 const mwLine = (request, response, next) => {
   console.log("-----------------------------------");
   console.log(`${request.method}: ${request.path}`);
