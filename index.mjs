@@ -13,11 +13,17 @@ import bindRoutes from "./routes.mjs";
 
 // 3. Initialize express
 const app = express();
-// app.use(methodOverride());
 
-// 4. Middleware
-// 4.1. To parse request body
+// 4. Configure settings
+app.set("views", "./views");
+app.set("view engine", "ejs");
+
+// 5. Middleware
+// 5.1. To parse request body
 app.use(express.urlencoded({ extended: false }));
+// 5.2. To handle DEL and PUT req from HTML forms
+app.use(methodOverride("_method"));
+// 5.3. To set default view engine to ejs
 const mwLine = (request, response, next) => {
   console.log("-----------------------------------");
   console.log(`${request.method}: ${request.path}`);
@@ -25,10 +31,10 @@ const mwLine = (request, response, next) => {
 };
 app.use(mwLine);
 
-// 5. bindRoutes to app
+// 6. bindRoutes to app
 bindRoutes(app);
 
-// 6. Start express server
+// 7. Start express server
 console.log("Starting server...");
 const PORT = process.env.PORT || 3004;
 app.listen(PORT);
